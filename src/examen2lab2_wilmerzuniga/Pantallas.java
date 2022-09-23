@@ -5,8 +5,11 @@
  */
 package examen2lab2_wilmerzuniga;
 
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -1090,6 +1093,27 @@ public class Pantallas extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        FileOutputStream fw = null;
+        ObjectOutputStream bw = null;
+        try {
+            
+                fw = new FileOutputStream("./empleados");
+                bw = new ObjectOutputStream(fw);
+                bw.writeObject(Empleados);
+
+            
+            bw.flush();
+        } catch (Exception ex) {
+        } finally {
+            try {
+                bw.close();
+                fw.close();
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(this, "Oh no, algo salio mal");
+            }
+        }
+        
+        
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 

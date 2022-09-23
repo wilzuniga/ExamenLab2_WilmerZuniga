@@ -1,7 +1,11 @@
 
 package examen2lab2_wilmerzuniga;
 
-public class Reparaciones {
+import java.io.Serializable;
+
+public class Reparaciones implements Serializable {
+    private static final long SerialVersionUID = 777L;
+
     private Empleados empleado;
     private Carros carros;
     private String Exito;

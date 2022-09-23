@@ -1,7 +1,9 @@
 package examen2lab2_wilmerzuniga;
 
-public class Carros {
+import java.io.Serializable;
 
+public class Carros implements Serializable{
+    private static final long SerialVersionUID = 777L;
     private int AñoFab;
     private String Marca;
     private String Modelo;

@@ -1,10 +1,12 @@
 package examen2lab2_wilmerzuniga;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Empleados {
-    //Atributos
+public class Empleados implements Serializable {
 
+    //Atributos
+    private static final long SerialVersionUID = 777L;
     private int Edad;
     private String Nombre;
     private String Id;
@@ -19,11 +21,10 @@ public class Empleados {
         this.Edad = Edad;
         this.Nombre = Nombre;
         this.Id = Id;
-        
+
     }
 
     //Mutadores
-
     public int getEdad() {
         return Edad;
     }
@@ -60,7 +61,5 @@ public class Empleados {
     public String toString() {
         return "Empleados{" + "Edad=" + Edad + ", Nombre=" + Nombre + ", Id=" + Id + ", carros=" + carros + '}';
     }
-
-    
 
 }
