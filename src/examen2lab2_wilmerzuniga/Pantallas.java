@@ -96,7 +96,6 @@ public class Pantallas extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         CrearEmpleado4 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
-        jButton8 = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         TablaListar2 = new javax.swing.JTable();
         CrearEmpleado3 = new javax.swing.JPanel();
@@ -104,8 +103,15 @@ public class Pantallas extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         TablaListar1 = new javax.swing.JTable();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         jTabbedPane1.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -626,7 +632,7 @@ public class Pantallas extends javax.swing.JFrame {
         jButton6.setBackground(new java.awt.Color(180, 225, 151));
         jButton6.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
         jButton6.setForeground(new java.awt.Color(78, 148, 79));
-        jButton6.setText("C r e a r  E m p l e a d o");
+        jButton6.setText("S i m u l a r");
         jButton6.setBorder(null);
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -713,7 +719,7 @@ public class Pantallas extends javax.swing.JFrame {
                         .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(145, Short.MAX_VALUE))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -733,7 +739,7 @@ public class Pantallas extends javax.swing.JFrame {
 
         jLabel27.setFont(new java.awt.Font("Roboto Medium", 1, 24)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(78, 148, 79));
-        jLabel27.setText("L i s t a r     C a r r o");
+        jLabel27.setText("C a r r o s   E n t r e g a d o s");
 
         TablaListar3.setBackground(new java.awt.Color(233, 239, 192));
         TablaListar3.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
@@ -786,7 +792,7 @@ public class Pantallas extends javax.swing.JFrame {
                 .addComponent(jLabel27)
                 .addGap(29, 29, 29)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -807,17 +813,6 @@ public class Pantallas extends javax.swing.JFrame {
         jLabel26.setFont(new java.awt.Font("Roboto Medium", 1, 24)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(78, 148, 79));
         jLabel26.setText(" R E P A R A C I O N E S");
-
-        jButton8.setBackground(new java.awt.Color(180, 225, 151));
-        jButton8.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(78, 148, 79));
-        jButton8.setText("Pagado");
-        jButton8.setBorder(null);
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
-            }
-        });
 
         TablaListar2.setBackground(new java.awt.Color(233, 239, 192));
         TablaListar2.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
@@ -859,9 +854,7 @@ public class Pantallas extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(CrearEmpleado4Layout.createSequentialGroup()
                 .addGap(43, 43, 43)
-                .addGroup(CrearEmpleado4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 710, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 710, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 56, Short.MAX_VALUE))
         );
         CrearEmpleado4Layout.setVerticalGroup(
@@ -871,9 +864,7 @@ public class Pantallas extends javax.swing.JFrame {
                 .addComponent(jLabel26)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
-                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46))
+                .addContainerGap(206, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -968,22 +959,35 @@ public class Pantallas extends javax.swing.JFrame {
                 .addComponent(jLabel25)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(46, 46, 46))
         );
 
         jTabbedPane1.addTab("Pagos", CrearEmpleado3);
 
+        jButton3.setText("X");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jTabbedPane1)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton3))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 569, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -991,9 +995,9 @@ public class Pantallas extends javax.swing.JFrame {
 
     private void CB_Usuario_Modificar_ATActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CB_Usuario_Modificar_ATActionPerformed
         CrearUsuarioP_TF_Nombre.setText(((Carros) CB_Usuario_Modificar_AT.getSelectedItem()).getModelo());
-        CrearUsuarioP_TF_Contraseña.setText(""+((Carros) CB_Usuario_Modificar_AT.getSelectedItem()).getAñoFab());
+        CrearUsuarioP_TF_Contraseña.setText("" + ((Carros) CB_Usuario_Modificar_AT.getSelectedItem()).getAñoFab());
         CrearUsuarioP_TF_Edad.setText("" + ((Carros) CB_Usuario_Modificar_AT.getSelectedItem()).getModelo());
-        CrearUsuarioP_TF_Usuario.setText(""+((Carros) CB_Usuario_Modificar_AT.getSelectedItem()).getSaldo());
+        CrearUsuarioP_TF_Usuario.setText("" + ((Carros) CB_Usuario_Modificar_AT.getSelectedItem()).getSaldo());
     }//GEN-LAST:event_CB_Usuario_Modificar_ATActionPerformed
 
     private void CB_Usuario_Modificar_ATItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CB_Usuario_Modificar_ATItemStateChanged
@@ -1015,7 +1019,7 @@ public class Pantallas extends javax.swing.JFrame {
         vram.setEstado("no");
 
         vraaam.add(vram);
-         //modeloTABLEListar();
+        //modeloTABLEListar();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -1032,11 +1036,11 @@ public class Pantallas extends javax.swing.JFrame {
         Empleados.add(e);
 
         modeloTABLEELIMINAR();
-        
+
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void CB_Usuario_Modificar_AT1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CB_Usuario_Modificar_AT1ItemStateChanged
@@ -1057,18 +1061,14 @@ public class Pantallas extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         //TABLAELIMINAR.remove(TABLAELIMINAR.getSelectedRow());
-        
+
         for (int i = 0; i < vraaam.size(); i++) {
             if (vraaam.get(i).getModelo().equals(TablaListar1.getValueAt(TablaListar1.getSelectedRow(), 0))) {
                 vraaam.get(i).setSaldo(0);
             }
         }
-        modeloTABLEListarPAGAR() ;
+        modeloTABLEListarPAGAR();
     }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
 
     private void EliminarPane_AdminTools_MWFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EliminarPane_AdminTools_MWFocusGained
 
@@ -1082,7 +1082,16 @@ public class Pantallas extends javax.swing.JFrame {
     private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
         modeloTABLEListarPAGAR();
         modeloTABLEListarEntregas();
+
     }//GEN-LAST:event_jTabbedPane1StateChanged
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        System.out.println("jnewfjnwkef");
+    }//GEN-LAST:event_formWindowClosed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     public void modeloTABLEELIMINAR() {
         //TABLAELIMINAR.fireTableDataChanged();
@@ -1106,26 +1115,26 @@ public class Pantallas extends javax.swing.JFrame {
         TablaListar.setModel(listPersona);
     }
 
-        public void modeloTABLEListarPAGAR() {
+    public void modeloTABLEListarPAGAR() {
         DefaultTableModel listPersona = (DefaultTableModel) TablaListar1.getModel();
         listPersona.setRowCount(0);
 
         for (Carros carro : vraaam) {
-            if(carro.getSaldo()!=0){
+            if (carro.getSaldo() != 0 && carro.getEstado().equals("en espera de pago de reparación")) {
                 Object[] row = {carro.getModelo(), carro.getMarca(), carro.getSaldo()};
                 listPersona.addRow(row);
             }
-            
+
         }
         TablaListar1.setModel(listPersona);
     }
-        
-        public void modeloTABLEListarEntregas() {
+
+    public void modeloTABLEListarEntregas() {
         DefaultTableModel listPersona = (DefaultTableModel) TablaListar3.getModel();
         listPersona.setRowCount(0);
 
         for (Carros carro : vraaam) {
-            if (carro.getEstado().equals("si") && carro.getSaldo() == 0) {
+            if (carro.getEstado().equals("entregado") && carro.getSaldo() == 0) {
                 Object[] row = {carro.getModelo(), carro.getMarca(), carro.getSaldo()};
                 listPersona.addRow(row);
             }
@@ -1133,7 +1142,7 @@ public class Pantallas extends javax.swing.JFrame {
         }
         TablaListar3.setModel(listPersona);
     }
-        
+
     public void modelocombobox() {
         CB_Usuario_Modificar_AT.getModel();
         DefaultComboBoxModel m = new DefaultComboBoxModel();
@@ -1142,6 +1151,26 @@ public class Pantallas extends javax.swing.JFrame {
         }
         CB_Usuario_Modificar_AT.setModel(m);
     }
+
+    public void COMBOBOXUSUARIOS() {
+        CB_Usuario_Modificar_AT1.getModel();
+        DefaultComboBoxModel m = new DefaultComboBoxModel();
+        for (Carros carro : vraaam) {
+            m.addElement(carro);
+        }
+        CB_Usuario_Modificar_AT1.setModel(m);
+    }
+
+    public void COMBOBoxempleados() {
+        CB_Usuario_Modificar_AT2.getModel();
+        DefaultComboBoxModel m = new DefaultComboBoxModel();
+        for (Empleados emp : Empleados) {
+            m.addElement(emp);
+        }
+        CB_Usuario_Modificar_AT2.setModel(m);
+    }
+
+    
     /**
      * @param args the command line arguments
      */
@@ -1209,11 +1238,11 @@ public class Pantallas extends javax.swing.JFrame {
     private javax.swing.JTable TablaListar3;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
