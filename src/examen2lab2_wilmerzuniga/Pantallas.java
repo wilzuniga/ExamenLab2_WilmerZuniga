@@ -1056,7 +1056,14 @@ public class Pantallas extends javax.swing.JFrame {
     }//GEN-LAST:event_CB_Usuario_Modificar_AT2ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+        //TABLAELIMINAR.remove(TABLAELIMINAR.getSelectedRow());
+        
+        for (int i = 0; i < vraaam.size(); i++) {
+            if (vraaam.get(i).getModelo().equals(TablaListar1.getValueAt(TablaListar1.getSelectedRow(), 0))) {
+                vraaam.get(i).setSaldo(0);
+            }
+        }
+        modeloTABLEListarPAGAR() ;
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -1074,6 +1081,7 @@ public class Pantallas extends javax.swing.JFrame {
 
     private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
         modeloTABLEListarPAGAR();
+        modeloTABLEListarEntregas();
     }//GEN-LAST:event_jTabbedPane1StateChanged
 
     public void modeloTABLEELIMINAR() {
@@ -1103,13 +1111,27 @@ public class Pantallas extends javax.swing.JFrame {
         listPersona.setRowCount(0);
 
         for (Carros carro : vraaam) {
-            if(carro.getEstado().equals("no") && carro.getSaldo()!=0){
+            if(carro.getSaldo()!=0){
                 Object[] row = {carro.getModelo(), carro.getMarca(), carro.getSaldo()};
                 listPersona.addRow(row);
             }
             
         }
         TablaListar1.setModel(listPersona);
+    }
+        
+        public void modeloTABLEListarEntregas() {
+        DefaultTableModel listPersona = (DefaultTableModel) TablaListar3.getModel();
+        listPersona.setRowCount(0);
+
+        for (Carros carro : vraaam) {
+            if (carro.getEstado().equals("si") && carro.getSaldo() == 0) {
+                Object[] row = {carro.getModelo(), carro.getMarca(), carro.getSaldo()};
+                listPersona.addRow(row);
+            }
+
+        }
+        TablaListar3.setModel(listPersona);
     }
         
     public void modelocombobox() {
