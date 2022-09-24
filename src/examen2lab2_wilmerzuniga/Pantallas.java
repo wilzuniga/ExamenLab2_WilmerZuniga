@@ -5,11 +5,20 @@
  */
 package examen2lab2_wilmerzuniga;
 
+import java.io.EOFException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import java.util.Collections;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -21,8 +30,16 @@ public class Pantallas extends javax.swing.JFrame {
     /**
      * Creates new form Pantallas
      */
-    public Pantallas() {
+    public Pantallas() throws IOException, FileNotFoundException, ClassNotFoundException {
         initComponents();
+        cargar();
+        COMBOBoxempleados();
+        COMBOBoxempleados();
+        COMBOBOXUSUARIOS();
+        modeloTABLEELIMINAR();
+        posibil();
+        ab = new barrita(jProgressBar1);;
+
     }
 
     /**
@@ -999,7 +1016,7 @@ public class Pantallas extends javax.swing.JFrame {
     private void CB_Usuario_Modificar_ATActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CB_Usuario_Modificar_ATActionPerformed
         CrearUsuarioP_TF_Nombre.setText(((Carros) CB_Usuario_Modificar_AT.getSelectedItem()).getModelo());
         CrearUsuarioP_TF_Contraseña.setText("" + ((Carros) CB_Usuario_Modificar_AT.getSelectedItem()).getAñoFab());
-        CrearUsuarioP_TF_Edad.setText("" + ((Carros) CB_Usuario_Modificar_AT.getSelectedItem()).getModelo());
+        CrearUsuarioP_TF_Edad.setText("" + ((Carros) CB_Usuario_Modificar_AT.getSelectedItem()).getMarca());
         CrearUsuarioP_TF_Usuario.setText("" + ((Carros) CB_Usuario_Modificar_AT.getSelectedItem()).getSaldo());
     }//GEN-LAST:event_CB_Usuario_Modificar_ATActionPerformed
 
@@ -1008,8 +1025,15 @@ public class Pantallas extends javax.swing.JFrame {
     }//GEN-LAST:event_CB_Usuario_Modificar_ATItemStateChanged
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int coso = CB_Usuario_Modificar_AT.getSelectedIndex();
+        vraaam.get(coso).setAñoFab(Integer.parseInt(CrearUsuarioP_TF_Contraseña.getText()));
+        vraaam.get(coso).setModelo(CrearUsuarioP_TF_Nombre.getText());
+        vraaam.get(coso).setMarca(CrearUsuarioP_TF_Edad.getText());
+        vraaam.get(coso).setSaldo(Integer.parseInt(CrearUsuarioP_TF_Usuario.getText()));
 
-
+        COMBOBoxempleados();
+        COMBOBoxempleados();
+        COMBOBOXUSUARIOS();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -1022,6 +1046,9 @@ public class Pantallas extends javax.swing.JFrame {
         vram.setEstado("no");
 
         vraaam.add(vram);
+        COMBOBoxempleados();
+        COMBOBoxempleados();
+        COMBOBOXUSUARIOS();
         //modeloTABLEListar();
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -1043,7 +1070,8 @@ public class Pantallas extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-
+        jProgressBar1.setMaximum(((Carros) CB_Usuario_Modificar_AT1.getSelectedItem()).getSaldo() / 1000);
+        ab.start();
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void CB_Usuario_Modificar_AT1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CB_Usuario_Modificar_AT1ItemStateChanged
@@ -1080,6 +1108,8 @@ public class Pantallas extends javax.swing.JFrame {
     private void jTabbedPane4StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane4StateChanged
         modeloTABLEListar();
         modelocombobox();
+        COMBOBOXUSUARIOS();
+        COMBOBOXUSUARIOS();
     }//GEN-LAST:event_jTabbedPane4StateChanged
 
     private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
@@ -1096,12 +1126,11 @@ public class Pantallas extends javax.swing.JFrame {
         FileOutputStream fw = null;
         ObjectOutputStream bw = null;
         try {
-            
-                fw = new FileOutputStream("./empleados");
-                bw = new ObjectOutputStream(fw);
-                bw.writeObject(Empleados);
 
-            
+            fw = new FileOutputStream("./empleados");
+            bw = new ObjectOutputStream(fw);
+            bw.writeObject(Empleados);
+
             bw.flush();
         } catch (Exception ex) {
         } finally {
@@ -1112,10 +1141,69 @@ public class Pantallas extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Oh no, algo salio mal");
             }
         }
-        
-        
+
+        fw = null;
+        bw = null;
+        try {
+
+            fw = new FileOutputStream("./Carros");
+            bw = new ObjectOutputStream(fw);
+            bw.writeObject(vraaam);
+
+            bw.flush();
+        } catch (Exception ex) {
+        } finally {
+            try {
+                bw.close();
+                fw.close();
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(this, "Oh no, algo salio mal");
+            }
+        }
+
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void cargar() throws FileNotFoundException, IOException, ClassNotFoundException {
+        File archivo = new File("./empleados");
+
+        FileInputStream entrada
+                = new FileInputStream(archivo);
+        ObjectInputStream objeto
+                = new ObjectInputStream(entrada);
+        try {
+            Object coso = objeto.readObject();
+            System.out.println(coso);
+
+            Empleados.addAll((ArrayList<Empleados>) coso);
+
+        } catch (EOFException e) {
+            //encontro el final del archivo
+        }
+
+        objeto.close();
+        entrada.close();
+
+        archivo = new File("./Carros");
+        if (archivo.exists()) {
+            entrada
+                    = new FileInputStream(archivo);
+            objeto
+                    = new ObjectInputStream(entrada);
+            try {
+                Object coso = objeto.readObject();
+                System.out.println(coso);
+
+                vraaam.addAll((ArrayList<Carros>) coso);
+
+            } catch (EOFException e) {
+                //encontro el final del archivo
+            }
+            objeto.close();
+            entrada.close();
+        }
+
+    }
 
     public void modeloTABLEELIMINAR() {
         //TABLAELIMINAR.fireTableDataChanged();
@@ -1194,7 +1282,20 @@ public class Pantallas extends javax.swing.JFrame {
         CB_Usuario_Modificar_AT2.setModel(m);
     }
 
-    
+    public void posibil() {
+        posi.removeAll(posi);
+        posi.add(1);
+        posi.add(2);
+        posi.add(3);
+        posi.add(4);
+        posi.add(5);
+        posi.add(6);
+        posi.add(7);
+        posi.add(8);
+        posi.add(9);
+        Collections.shuffle(posi);
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -1225,10 +1326,18 @@ public class Pantallas extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Pantallas().setVisible(true);
+                try {
+                    new Pantallas().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
+
+    private ArrayList<Integer> posi = new ArrayList();
     private ArrayList<Empleados> Empleados = new ArrayList();
     private ArrayList<  Carros> vraaam = new ArrayList();
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1306,4 +1415,5 @@ public class Pantallas extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane4;
     // End of variables declaration//GEN-END:variables
+    barrita ab;
 }
