@@ -5,11 +5,13 @@
  */
 package examen2lab2_wilmerzuniga;
 
+import java.io.BufferedWriter;
 import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -19,6 +21,7 @@ import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import java.util.Collections;
+import java.util.Date;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -1074,78 +1077,125 @@ public class Pantallas extends javax.swing.JFrame {
         ab.start();
         posibil();
         switch (posi.get(0)) {
-            case(1):{
-                if(  (((Empleados)CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros())/10 > posi.get(0)  ){
-                        vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
-                }else{
+            case (1): {
+                if ((((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros()) / 10 > posi.get(0)) {
+                    vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
+
+                    FileWriter fw = null;
+                    BufferedWriter bw = null;
+                    String coso = "";
+
+                    try {
+                        File archivo = new File("./Bitacora.txt");
+                        Date n = new Date();
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        bw.write("El carro modelo " + ((Carros) CB_Usuario_Modificar_AT1.getSelectedItem()).getModelo() + " no fue reparado por " + ((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getNombre() + "el dia " + n + "\n");
+                        bw.flush();//pasar al rom
+                    } catch (Exception ex) {
+                    }
+                    try {
+                        bw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    try {
+                        fw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                } else {
+                    vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en reparacion");
+                    FileWriter fw = null;
+                    BufferedWriter bw = null;
+                    String coso = "";
+
+                    try {
+                        File archivo = new File("./Bitacora.txt");
+                        Date n = new Date();
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        bw.write("El carro modelo " + ((Carros) CB_Usuario_Modificar_AT1.getSelectedItem()).getModelo() + " fue reparado por " + ((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getNombre() + "el dia " + n + "\n");
+                        bw.flush();//pasar al rom
+                    } catch (Exception ex) {
+                    }
+                    try {
+                        bw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    try {
+                        fw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+
+            case (2): {
+                if ((((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros()) / 10 > posi.get(0)) {
+                    vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
+                } else {
                     vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en reparacion");
                 }
             }
-            
-            case(2):{
-                if(  (((Empleados)CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros())/10 > posi.get(0)  ){
-                        vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
-                }else{
+
+            case (3): {
+                if ((((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros()) / 10 > posi.get(0)) {
+                    vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
+                } else {
                     vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en reparacion");
                 }
             }
-            
-            case(3):{
-                if(  (((Empleados)CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros())/10 > posi.get(0)  ){
-                        vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
-                }else{
+
+            case (4): {
+                if ((((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros()) / 10 > posi.get(0)) {
+                    vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
+                } else {
                     vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en reparacion");
                 }
             }
-            
-            case(4):{
-                if(  (((Empleados)CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros())/10 > posi.get(0)  ){
-                        vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
-                }else{
-                    vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en reparacion");
-                }
-            }
-            
-            case(5):{
+
+            case (5): {
                 if ((((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros()) / 10 > posi.get(0)) {
 
                 } else {
 
                 }
             }
-            
-            case(6):{
-                if(  (((Empleados)CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros())/10 > posi.get(0)  ){
-                        vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
-                }else{
+
+            case (6): {
+                if ((((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros()) / 10 > posi.get(0)) {
+                    vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
+                } else {
                     vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en reparacion");
                 }
             }
-            
-            case(7):{
-                if(  (((Empleados)CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros())/10 > posi.get(0)  ){
-                        vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
-                }else{
+
+            case (7): {
+                if ((((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros()) / 10 > posi.get(0)) {
+                    vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
+                } else {
                     vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en reparacion");
                 }
             }
-            
-            case(8):{
-                if(  (((Empleados)CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros())/10 > posi.get(0)  ){
-                        vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
-                }else{
+
+            case (8): {
+                if ((((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros()) / 10 > posi.get(0)) {
+                    vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
+                } else {
                     vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en reparacion");
                 }
             }
-            
-            case(9):{
-                if(  (((Empleados)CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros())/10 > posi.get(0)  ){
-                        vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
-                }else{
+
+            case (9): {
+                if ((((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros()) / 10 > posi.get(0)) {
+                    vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
+                } else {
                     vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en reparacion");
                 }
             }
-            
+
         }
     }//GEN-LAST:event_jButton6ActionPerformed
 
