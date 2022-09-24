@@ -1133,66 +1133,442 @@ public class Pantallas extends javax.swing.JFrame {
             }
 
             case (2): {
-                if ((((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros()) / 10 > posi.get(0)) {
+                                if ((((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros()) / 10 > posi.get(0)) {
                     vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
+
+                    FileWriter fw = null;
+                    BufferedWriter bw = null;
+                    String coso = "";
+
+                    try {
+                        File archivo = new File("./Bitacora.txt");
+                        Date n = new Date();
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        bw.write("El carro modelo " + ((Carros) CB_Usuario_Modificar_AT1.getSelectedItem()).getModelo() + " no fue reparado por " + ((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getNombre() + "el dia " + n + "\n");
+                        bw.flush();//pasar al rom
+                    } catch (Exception ex) {
+                    }
+                    try {
+                        bw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    try {
+                        fw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 } else {
                     vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en reparacion");
+                    FileWriter fw = null;
+                    BufferedWriter bw = null;
+                    String coso = "";
+
+                    try {
+                        File archivo = new File("./Bitacora.txt");
+                        Date n = new Date();
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        bw.write("El carro modelo " + ((Carros) CB_Usuario_Modificar_AT1.getSelectedItem()).getModelo() + " fue reparado por " + ((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getNombre() + "el dia " + n + "\n");
+                        bw.flush();//pasar al rom
+                    } catch (Exception ex) {
+                    }
+                    try {
+                        bw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    try {
+                        fw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
             }
 
             case (3): {
-                if ((((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros()) / 10 > posi.get(0)) {
+                                if ((((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros()) / 10 > posi.get(0)) {
                     vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
+
+                    FileWriter fw = null;
+                    BufferedWriter bw = null;
+                    String coso = "";
+
+                    try {
+                        File archivo = new File("./Bitacora.txt");
+                        Date n = new Date();
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        bw.write("El carro modelo " + ((Carros) CB_Usuario_Modificar_AT1.getSelectedItem()).getModelo() + " no fue reparado por " + ((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getNombre() + "el dia " + n + "\n");
+                        bw.flush();//pasar al rom
+                    } catch (Exception ex) {
+                    }
+                    try {
+                        bw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    try {
+                        fw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 } else {
                     vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en reparacion");
+                    FileWriter fw = null;
+                    BufferedWriter bw = null;
+                    String coso = "";
+
+                    try {
+                        File archivo = new File("./Bitacora.txt");
+                        Date n = new Date();
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        bw.write("El carro modelo " + ((Carros) CB_Usuario_Modificar_AT1.getSelectedItem()).getModelo() + " fue reparado por " + ((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getNombre() + "el dia " + n + "\n");
+                        bw.flush();//pasar al rom
+                    } catch (Exception ex) {
+                    }
+                    try {
+                        bw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    try {
+                        fw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
             }
 
             case (4): {
-                if ((((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros()) / 10 > posi.get(0)) {
+                                if ((((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros()) / 10 > posi.get(0)) {
                     vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
+
+                    FileWriter fw = null;
+                    BufferedWriter bw = null;
+                    String coso = "";
+
+                    try {
+                        File archivo = new File("./Bitacora.txt");
+                        Date n = new Date();
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        bw.write("El carro modelo " + ((Carros) CB_Usuario_Modificar_AT1.getSelectedItem()).getModelo() + " no fue reparado por " + ((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getNombre() + "el dia " + n + "\n");
+                        bw.flush();//pasar al rom
+                    } catch (Exception ex) {
+                    }
+                    try {
+                        bw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    try {
+                        fw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 } else {
                     vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en reparacion");
+                    FileWriter fw = null;
+                    BufferedWriter bw = null;
+                    String coso = "";
+
+                    try {
+                        File archivo = new File("./Bitacora.txt");
+                        Date n = new Date();
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        bw.write("El carro modelo " + ((Carros) CB_Usuario_Modificar_AT1.getSelectedItem()).getModelo() + " fue reparado por " + ((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getNombre() + "el dia " + n + "\n");
+                        bw.flush();//pasar al rom
+                    } catch (Exception ex) {
+                    }
+                    try {
+                        bw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    try {
+                        fw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
             }
 
             case (5): {
-                if ((((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros()) / 10 > posi.get(0)) {
+                                if ((((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros()) / 10 > posi.get(0)) {
+                    vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
 
+                    FileWriter fw = null;
+                    BufferedWriter bw = null;
+                    String coso = "";
+
+                    try {
+                        File archivo = new File("./Bitacora.txt");
+                        Date n = new Date();
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        bw.write("El carro modelo " + ((Carros) CB_Usuario_Modificar_AT1.getSelectedItem()).getModelo() + " no fue reparado por " + ((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getNombre() + "el dia " + n + "\n");
+                        bw.flush();//pasar al rom
+                    } catch (Exception ex) {
+                    }
+                    try {
+                        bw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    try {
+                        fw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 } else {
+                    vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en reparacion");
+                    FileWriter fw = null;
+                    BufferedWriter bw = null;
+                    String coso = "";
 
+                    try {
+                        File archivo = new File("./Bitacora.txt");
+                        Date n = new Date();
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        bw.write("El carro modelo " + ((Carros) CB_Usuario_Modificar_AT1.getSelectedItem()).getModelo() + " fue reparado por " + ((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getNombre() + "el dia " + n + "\n");
+                        bw.flush();//pasar al rom
+                    } catch (Exception ex) {
+                    }
+                    try {
+                        bw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    try {
+                        fw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
             }
 
             case (6): {
-                if ((((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros()) / 10 > posi.get(0)) {
+                                if ((((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros()) / 10 > posi.get(0)) {
                     vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
+
+                    FileWriter fw = null;
+                    BufferedWriter bw = null;
+                    String coso = "";
+
+                    try {
+                        File archivo = new File("./Bitacora.txt");
+                        Date n = new Date();
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        bw.write("El carro modelo " + ((Carros) CB_Usuario_Modificar_AT1.getSelectedItem()).getModelo() + " no fue reparado por " + ((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getNombre() + "el dia " + n + "\n");
+                        bw.flush();//pasar al rom
+                    } catch (Exception ex) {
+                    }
+                    try {
+                        bw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    try {
+                        fw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 } else {
                     vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en reparacion");
+                    FileWriter fw = null;
+                    BufferedWriter bw = null;
+                    String coso = "";
+
+                    try {
+                        File archivo = new File("./Bitacora.txt");
+                        Date n = new Date();
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        bw.write("El carro modelo " + ((Carros) CB_Usuario_Modificar_AT1.getSelectedItem()).getModelo() + " fue reparado por " + ((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getNombre() + "el dia " + n + "\n");
+                        bw.flush();//pasar al rom
+                    } catch (Exception ex) {
+                    }
+                    try {
+                        bw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    try {
+                        fw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
             }
 
             case (7): {
-                if ((((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros()) / 10 > posi.get(0)) {
+                                if ((((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros()) / 10 > posi.get(0)) {
                     vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
+
+                    FileWriter fw = null;
+                    BufferedWriter bw = null;
+                    String coso = "";
+
+                    try {
+                        File archivo = new File("./Bitacora.txt");
+                        Date n = new Date();
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        bw.write("El carro modelo " + ((Carros) CB_Usuario_Modificar_AT1.getSelectedItem()).getModelo() + " no fue reparado por " + ((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getNombre() + "el dia " + n + "\n");
+                        bw.flush();//pasar al rom
+                    } catch (Exception ex) {
+                    }
+                    try {
+                        bw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    try {
+                        fw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 } else {
                     vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en reparacion");
+                    FileWriter fw = null;
+                    BufferedWriter bw = null;
+                    String coso = "";
+
+                    try {
+                        File archivo = new File("./Bitacora.txt");
+                        Date n = new Date();
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        bw.write("El carro modelo " + ((Carros) CB_Usuario_Modificar_AT1.getSelectedItem()).getModelo() + " fue reparado por " + ((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getNombre() + "el dia " + n + "\n");
+                        bw.flush();//pasar al rom
+                    } catch (Exception ex) {
+                    }
+                    try {
+                        bw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    try {
+                        fw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
             }
 
             case (8): {
-                if ((((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros()) / 10 > posi.get(0)) {
+                                if ((((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros()) / 10 > posi.get(0)) {
                     vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
+
+                    FileWriter fw = null;
+                    BufferedWriter bw = null;
+                    String coso = "";
+
+                    try {
+                        File archivo = new File("./Bitacora.txt");
+                        Date n = new Date();
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        bw.write("El carro modelo " + ((Carros) CB_Usuario_Modificar_AT1.getSelectedItem()).getModelo() + " no fue reparado por " + ((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getNombre() + "el dia " + n + "\n");
+                        bw.flush();//pasar al rom
+                    } catch (Exception ex) {
+                    }
+                    try {
+                        bw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    try {
+                        fw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 } else {
                     vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en reparacion");
+                    FileWriter fw = null;
+                    BufferedWriter bw = null;
+                    String coso = "";
+
+                    try {
+                        File archivo = new File("./Bitacora.txt");
+                        Date n = new Date();
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        bw.write("El carro modelo " + ((Carros) CB_Usuario_Modificar_AT1.getSelectedItem()).getModelo() + " fue reparado por " + ((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getNombre() + "el dia " + n + "\n");
+                        bw.flush();//pasar al rom
+                    } catch (Exception ex) {
+                    }
+                    try {
+                        bw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    try {
+                        fw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
             }
 
             case (9): {
-                if ((((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros()) / 10 > posi.get(0)) {
+                               if ((((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros()) / 10 > posi.get(0)) {
                     vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
+
+                    FileWriter fw = null;
+                    BufferedWriter bw = null;
+                    String coso = "";
+
+                    try {
+                        File archivo = new File("./Bitacora.txt");
+                        Date n = new Date();
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        bw.write("El carro modelo " + ((Carros) CB_Usuario_Modificar_AT1.getSelectedItem()).getModelo() + " no fue reparado por " + ((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getNombre() + "el dia " + n + "\n");
+                        bw.flush();//pasar al rom
+                    } catch (Exception ex) {
+                    }
+                    try {
+                        bw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    try {
+                        fw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 } else {
                     vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en reparacion");
+                    FileWriter fw = null;
+                    BufferedWriter bw = null;
+                    String coso = "";
+
+                    try {
+                        File archivo = new File("./Bitacora.txt");
+                        Date n = new Date();
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        bw.write("El carro modelo " + ((Carros) CB_Usuario_Modificar_AT1.getSelectedItem()).getModelo() + " fue reparado por " + ((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getNombre() + "el dia " + n + "\n");
+                        bw.flush();//pasar al rom
+                    } catch (Exception ex) {
+                    }
+                    try {
+                        bw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    try {
+                        fw.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
             }
 
