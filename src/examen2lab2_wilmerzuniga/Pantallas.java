@@ -1043,7 +1043,7 @@ public class Pantallas extends javax.swing.JFrame {
         vram.setMarca(CrearUsuarioP_TF_Nombre2.getText());
         vram.setModelo(CrearUsuarioP_TF_Edad2.getText());
         vram.setSaldo(Integer.parseInt(CrearUsuarioP_TF_Edad3.getText()));
-        vram.setEstado("no");
+        vram.setEstado("en espera de entrar a reparación");
 
         vraaam.add(vram);
         COMBOBoxempleados();
@@ -1072,6 +1072,81 @@ public class Pantallas extends javax.swing.JFrame {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         jProgressBar1.setMaximum(((Carros) CB_Usuario_Modificar_AT1.getSelectedItem()).getSaldo() / 1000);
         ab.start();
+        posibil();
+        switch (posi.get(0)) {
+            case(1):{
+                if(  (((Empleados)CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros())/10 > posi.get(0)  ){
+                        vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
+                }else{
+                    vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en reparacion");
+                }
+            }
+            
+            case(2):{
+                if(  (((Empleados)CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros())/10 > posi.get(0)  ){
+                        vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
+                }else{
+                    vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en reparacion");
+                }
+            }
+            
+            case(3):{
+                if(  (((Empleados)CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros())/10 > posi.get(0)  ){
+                        vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
+                }else{
+                    vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en reparacion");
+                }
+            }
+            
+            case(4):{
+                if(  (((Empleados)CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros())/10 > posi.get(0)  ){
+                        vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
+                }else{
+                    vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en reparacion");
+                }
+            }
+            
+            case(5):{
+                if ((((Empleados) CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros()) / 10 > posi.get(0)) {
+
+                } else {
+
+                }
+            }
+            
+            case(6):{
+                if(  (((Empleados)CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros())/10 > posi.get(0)  ){
+                        vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
+                }else{
+                    vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en reparacion");
+                }
+            }
+            
+            case(7):{
+                if(  (((Empleados)CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros())/10 > posi.get(0)  ){
+                        vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
+                }else{
+                    vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en reparacion");
+                }
+            }
+            
+            case(8):{
+                if(  (((Empleados)CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros())/10 > posi.get(0)  ){
+                        vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
+                }else{
+                    vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en reparacion");
+                }
+            }
+            
+            case(9):{
+                if(  (((Empleados)CB_Usuario_Modificar_AT2.getSelectedItem()).getCarros())/10 > posi.get(0)  ){
+                        vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en espera de pago de reparacion");
+                }else{
+                    vraaam.get(CB_Usuario_Modificar_AT1.getSelectedIndex()).setEstado("en reparacion");
+                }
+            }
+            
+        }
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void CB_Usuario_Modificar_AT1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CB_Usuario_Modificar_AT1ItemStateChanged
