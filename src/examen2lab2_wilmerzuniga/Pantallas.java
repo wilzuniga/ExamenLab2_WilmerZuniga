@@ -109,8 +109,6 @@ public class Pantallas extends javax.swing.JFrame {
         CB_Usuario_Modificar_AT1 = new javax.swing.JComboBox<>();
         CB_Usuario_Modificar_AT2 = new javax.swing.JComboBox<>();
         jProgressBar1 = new javax.swing.JProgressBar();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
         jPanel4 = new javax.swing.JPanel();
         ListarPane_AdminTools_MW1 = new javax.swing.JPanel();
         jLabel27 = new javax.swing.JLabel();
@@ -693,10 +691,6 @@ public class Pantallas extends javax.swing.JFrame {
             }
         });
 
-        jList1.setBackground(new java.awt.Color(180, 225, 151));
-        jList1.setForeground(new java.awt.Color(78, 148, 79));
-        jScrollPane3.setViewportView(jList1);
-
         javax.swing.GroupLayout CrearEmpleado2Layout = new javax.swing.GroupLayout(CrearEmpleado2);
         CrearEmpleado2.setLayout(CrearEmpleado2Layout);
         CrearEmpleado2Layout.setHorizontalGroup(
@@ -717,8 +711,7 @@ public class Pantallas extends javax.swing.JFrame {
                             .addComponent(CB_Usuario_Modificar_AT1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(CrearEmpleado2Layout.createSequentialGroup()
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 213, Short.MAX_VALUE)
+                                .addGap(0, 503, Short.MAX_VALUE)
                                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(46, 46, 46))
         );
@@ -740,8 +733,7 @@ public class Pantallas extends javax.swing.JFrame {
                         .addComponent(CB_Usuario_Modificar_AT1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(159, 159, 159)))
                 .addContainerGap(114, Short.MAX_VALUE))
         );
 
@@ -1900,7 +1892,6 @@ public class Pantallas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1908,7 +1899,6 @@ public class Pantallas extends javax.swing.JFrame {
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
